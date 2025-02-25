@@ -30,12 +30,14 @@
         color: #333;
         background-color: #fff;
       }
+
       /* Subtle default heading style */
       h2 {
         color: #2c3e50;
         margin-bottom: 0.5em;
         font-weight: 600;
       }
+
       /* Bullet lists */
       ul,
       ol {
@@ -44,13 +46,13 @@
         margin-left: 1.2em;
         color: #333;
       }
-      /* Keep slides from overflowing; allow vertical scrolling if needed */
+
+      /* Remove custom overflow so Reveal.js can handle scaling */
       .reveal .slides section {
-        overflow-y: auto;
-        max-height: 90vh;
-        padding-right: 1em;
-        position: relative; /* for the pseudo-element eye graphic */
+        position: relative; /* Keep for the eye icon pseudo-element */
+        /* Overflow and max-height removed */
       }
+
       /* Section name in a smaller subheader style */
       .section-name {
         font-size: 0.9em;
@@ -59,6 +61,7 @@
         font-weight: 600;
         text-transform: uppercase;
       }
+
       /* Eye icon placed via ::after pseudo-element on each slide */
       section.ophthal-slide::after {
         content: "";
@@ -72,6 +75,7 @@
         opacity: 0.1; /* faint icon */
         pointer-events: none; /* so it doesn’t interfere with clicks */
       }
+
       /* Title slide styling */
       section.title-slide {
         text-align: center;
@@ -846,8 +850,7 @@
         progress: true, // Show progress bar
         center: true, // Center slides vertically
         transition: "slide", // Slide transition
-        width: "100%",
-        height: "100%",
+        // No explicit width/height => Reveal will auto-scale the slides
       });
     </script>
   </body>
