@@ -10,81 +10,111 @@
       href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css"
     />
 
-    <!-- Reveal.js Theme (Moon) -->
+    <!-- Reveal.js Theme (White) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css"
       id="theme"
     />
 
-    <!-- Optional Reveal.js "League" Font for headings -->
-    <!-- You can also swap in your preferred fonts via Google Fonts -->
+    <!-- Google Font: Open Sans -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
     />
 
     <style>
-      /* Custom styling for a consistent medical-themed look */
-
-      /* Use Open Sans for body text */
+      /* Global font and color settings */
       body,
       .reveal {
         font-family: "Open Sans", sans-serif;
         color: #333;
       }
 
-      /* Slide headings */
-      .reveal h2 {
-        font-size: 1.4em;
-        margin-bottom: 0.4em;
-        color: #2c3e50; /* A dark slate-blue */
-        text-transform: none;
+      /* Fixed presentation header at top */
+      .presentation-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #4a90e2, #357abd);
+        color: #fff;
+        text-align: center;
+        padding: 0.8em 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .presentation-header h1 {
+        margin: 0;
+        font-size: 1.5em;
       }
 
-      /* Lists (bullets/numbering) */
+      /* Ensure the reveal container does not get hidden under the fixed header */
+      .reveal {
+        margin-top: 60px; /* Adjust according to header height */
+      }
+
+      /* Slide styling for a clean, card-like appearance */
+      .reveal .slides section {
+        padding: 1.5em;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+
+      /* Small section header above main slide titles */
+      .slide-header {
+        font-size: 0.9em;
+        color: #777;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.3em;
+      }
+
+      /* Main slide title styling */
+      .reveal h2 {
+        font-size: 1.8em;
+        margin-top: 0.2em;
+        margin-bottom: 0.5em;
+        color: #2c3e50;
+        border-bottom: 2px solid #4a90e2;
+        padding-bottom: 0.3em;
+      }
+
+      /* List styling */
       .reveal ul,
       .reveal ol {
-        font-size: 0.95em; /* Slightly smaller to reduce overflow */
-        line-height: 1.4em;
+        font-size: 1em;
+        line-height: 1.6em;
         margin-left: 1.2em;
-        color: #333;
       }
 
-      /* Title slide styling (optional) */
+      /* Title slide styling */
       section.title-slide {
         text-align: center;
         background-color: #f7f7f7;
         color: #2c3e50;
-        position: relative;
-      }
-      section.title-slide h2 {
-        font-size: 1.8em;
-        margin: 0.5em 0;
-      }
-      section.title-slide h3 {
-        font-size: 1.2em;
-        margin: 0.2em 0;
+        padding: 2em;
       }
 
-      /* References slide styling (optional) */
+      /* References slide styling */
       section.references-slide {
         background-color: #fdfefe;
-      }
-
-      /* Ensure content fits or scrolls, preventing overflow cutoff */
-      .reveal .slides section {
-        overflow-y: auto; /* Scroll if content is too long */
-        max-height: 90vh; /* Keep some margin for navigation controls */
-        padding-right: 1em;
+        padding: 2em;
       }
     </style>
   </head>
   <body>
+    <!-- Fixed header with presentation title -->
+    <header class="presentation-header">
+      <h1>Optic Neuritis in Multiple Sclerosis</h1>
+    </header>
+
     <div class="reveal">
       <div class="slides">
         <!-- Slide 1 (Title) -->
         <section class="title-slide">
+          <div class="slide-header">Title</div>
           <h2>Optic Neuritis in Multiple Sclerosis</h2>
           <h3>
             A Comprehensive Review (History, Exam, Diagnosis &amp; Management)
@@ -95,6 +125,7 @@
 
         <!-- Slide 2: Outline -->
         <section>
+          <div class="slide-header">Section 1</div>
           <h2>Outline</h2>
           <ol>
             <li>Introduction</li>
@@ -117,6 +148,7 @@
 
         <!-- Slide 3: Definition of ON -->
         <section>
+          <div class="slide-header">Section 2</div>
           <h2>Definition of Optic Neuritis</h2>
           <ul>
             <li>
@@ -135,6 +167,7 @@
 
         <!-- Slide 4: Importance of Studying ON in MS -->
         <section>
+          <div class="slide-header">Section 2</div>
           <h2>Importance of Studying ON in MS</h2>
           <ul>
             <li>
@@ -151,6 +184,7 @@
 
         <!-- Slide 5: Epidemiology -->
         <section>
+          <div class="slide-header">Section 3</div>
           <h2>Epidemiology</h2>
           <ul>
             <li><strong>Age:</strong> Typically 20–40 years</li>
@@ -168,6 +202,7 @@
 
         <!-- Slide 6: Risk Factors -->
         <section>
+          <div class="slide-header">Section 3</div>
           <h2>Risk Factors</h2>
           <ul>
             <li>
@@ -187,6 +222,7 @@
 
         <!-- Slide 7: Basic Immunopathology -->
         <section>
+          <div class="slide-header">Section 4</div>
           <h2>Basic Immunopathology</h2>
           <ul>
             <li>
@@ -206,6 +242,7 @@
 
         <!-- Slide 8: Demyelination in the Optic Nerve -->
         <section>
+          <div class="slide-header">Section 4</div>
           <h2>Demyelination in the Optic Nerve</h2>
           <ul>
             <li><strong>Myelin Loss:</strong> Slows nerve conduction</li>
@@ -221,6 +258,7 @@
 
         <!-- Slide 9: Role of MS Plaques -->
         <section>
+          <div class="slide-header">Section 4</div>
           <h2>Role of MS Plaques</h2>
           <ul>
             <li><strong>MS Plaques:</strong> Focal CNS demyelination</li>
@@ -241,6 +279,7 @@
 
         <!-- Slide 10: Typical vs. Atypical ON -->
         <section>
+          <div class="slide-header">Section 5</div>
           <h2>Typical vs. Atypical ON</h2>
           <ul>
             <li>
@@ -263,6 +302,7 @@
 
         <!-- Slide 11: Clinical Clues to Atypical ON -->
         <section>
+          <div class="slide-header">Section 5</div>
           <h2>Clinical Clues to Atypical ON</h2>
           <ul>
             <li>Poor steroid response</li>
@@ -275,6 +315,7 @@
 
         <!-- Slide 12: ON as an Early Indicator of MS -->
         <section>
+          <div class="slide-header">Section 5</div>
           <h2>ON as an Early Indicator of MS</h2>
           <ul>
             <li>15–20% of MS patients present with ON initially</li>
@@ -285,6 +326,7 @@
 
         <!-- Slide 13: MS Diagnostic Criteria (Brief) -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>MS Diagnostic Criteria (Brief)</h2>
           <ul>
             <li>
@@ -304,6 +346,7 @@
 
         <!-- Slide 14: Vision Loss -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Vision Loss</h2>
           <ul>
             <li>
@@ -326,6 +369,7 @@
 
         <!-- Slide 15: Pain with Eye Movement -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Pain with Eye Movement</h2>
           <ul>
             <li>
@@ -337,6 +381,7 @@
 
         <!-- Slide 16: Color Vision Defects -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Color Vision Defects</h2>
           <ul>
             <li>Red desaturation is a hallmark of ON</li>
@@ -350,6 +395,7 @@
 
         <!-- Slide 17: Visual Field Defects -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Visual Field Defects</h2>
           <ul>
             <li>Most common: Central or cecocentral scotoma</li>
@@ -360,6 +406,7 @@
 
         <!-- Slide 18: Uhthoff’s Phenomenon -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Uhthoff’s Phenomenon</h2>
           <ul>
             <li>Worsening of neurological symptoms with heat/exercise</li>
@@ -373,6 +420,7 @@
 
         <!-- Slide 19: Relative Afferent Pupillary Defect (RAPD) -->
         <section>
+          <div class="slide-header">Section 6</div>
           <h2>Relative Afferent Pupillary Defect (RAPD)</h2>
           <ul>
             <li>
@@ -388,6 +436,7 @@
 
         <!-- Slide 20: History Taking (Part 1) -->
         <section>
+          <div class="slide-header">Section 7</div>
           <h2>Key Points in History (Part 1)</h2>
           <ul>
             <li>Chief complaint: Exact nature &amp; onset of vision loss</li>
@@ -399,6 +448,7 @@
 
         <!-- Slide 21: History Taking (Part 2) -->
         <section>
+          <div class="slide-header">Section 7</div>
           <h2>Key Points in History (Part 2)</h2>
           <ul>
             <li>
@@ -423,6 +473,7 @@
 
         <!-- Slide 22: Additional History Details -->
         <section>
+          <div class="slide-header">Section 7</div>
           <h2>Additional History Details</h2>
           <ul>
             <li>Medication Use: steroids, immunomodulators, etc.</li>
@@ -436,6 +487,7 @@
 
         <!-- Slide 23: Visual Acuity Testing -->
         <section>
+          <div class="slide-header">Section 8</div>
           <h2>Visual Acuity Testing</h2>
           <ul>
             <li>Measure best-corrected VA (Snellen, ETDRS)</li>
@@ -446,6 +498,7 @@
 
         <!-- Slide 24: Pupillary Examination -->
         <section>
+          <div class="slide-header">Section 8</div>
           <h2>Pupillary Examination</h2>
           <ul>
             <li>Size, shape, symmetry</li>
@@ -457,6 +510,7 @@
 
         <!-- Slide 25: Color Vision Testing -->
         <section>
+          <div class="slide-header">Section 8</div>
           <h2>Color Vision Testing</h2>
           <ul>
             <li>Ishihara plates to screen for color defects</li>
@@ -467,6 +521,7 @@
 
         <!-- Slide 26: Visual Field Evaluation -->
         <section>
+          <div class="slide-header">Section 8</div>
           <h2>Visual Field Evaluation</h2>
           <ul>
             <li>Confrontation testing (screening)</li>
@@ -477,6 +532,7 @@
 
         <!-- Slide 27: Fundoscopic Examination -->
         <section>
+          <div class="slide-header">Section 9</div>
           <h2>Fundoscopic Examination</h2>
           <ul>
             <li>Acute ON often normal disc (retrobulbar neuritis)</li>
@@ -487,6 +543,7 @@
 
         <!-- Slide 28: Neurological Examination -->
         <section>
+          <div class="slide-header">Section 9</div>
           <h2>Neurological Examination</h2>
           <ul>
             <li>Cranial Nerves: check EOMs (III, IV, VI), CN V, etc.</li>
@@ -498,6 +555,7 @@
 
         <!-- Slide 29: MRI of the Brain & Orbits (Part 1) -->
         <section>
+          <div class="slide-header">Section 10</div>
           <h2>MRI of the Brain &amp; Orbits (1)</h2>
           <ul>
             <li>
@@ -516,6 +574,7 @@
 
         <!-- Slide 30: MRI of the Brain & Orbits (Part 2) -->
         <section>
+          <div class="slide-header">Section 10</div>
           <h2>MRI of the Brain &amp; Orbits (2)</h2>
           <ul>
             <li>
@@ -531,6 +590,7 @@
 
         <!-- Slide 31: Visual Evoked Potentials (VEP) -->
         <section>
+          <div class="slide-header">Section 10</div>
           <h2>Visual Evoked Potentials (VEP)</h2>
           <ul>
             <li>Measures conduction speed from retina to occipital cortex</li>
@@ -541,6 +601,7 @@
 
         <!-- Slide 32: Optical Coherence Tomography (OCT) -->
         <section>
+          <div class="slide-header">Section 10</div>
           <h2>Optical Coherence Tomography (OCT)</h2>
           <ul>
             <li>
@@ -553,6 +614,7 @@
 
         <!-- Slide 33: Additional Laboratory Tests -->
         <section>
+          <div class="slide-header">Section 11</div>
           <h2>Additional Laboratory Tests</h2>
           <ul>
             <li><strong>Serologic:</strong> NMO-IgG (AQP4), MOG-IgG</li>
@@ -566,6 +628,7 @@
 
         <!-- Slide 34: Major Differentials -->
         <section>
+          <div class="slide-header">Section 12</div>
           <h2>Major Differentials</h2>
           <ul>
             <li>Neuromyelitis Optica (NMO)</li>
@@ -579,6 +642,7 @@
 
         <!-- Slide 35: Clues to Differentials -->
         <section>
+          <div class="slide-header">Section 12</div>
           <h2>Clues to Differentials</h2>
           <ul>
             <li>
@@ -602,6 +666,7 @@
 
         <!-- Slide 36: General Approach to Management -->
         <section>
+          <div class="slide-header">Section 13</div>
           <h2>General Approach to Management</h2>
           <ul>
             <li>Confirm diagnosis: Clinical + MRI (+/- VEP)</li>
@@ -612,6 +677,7 @@
 
         <!-- Slide 37: High-Dose Corticosteroids -->
         <section>
+          <div class="slide-header">Section 13</div>
           <h2>High-Dose Corticosteroids</h2>
           <ul>
             <li>
@@ -624,6 +690,7 @@
 
         <!-- Slide 38: Disease-Modifying Therapies (DMTs) -->
         <section>
+          <div class="slide-header">Section 13</div>
           <h2>Disease-Modifying Therapies (DMTs)</h2>
           <ul>
             <li>Indicated if MS or high MS risk is confirmed</li>
@@ -642,6 +709,7 @@
 
         <!-- Slide 39: Other Immunomodulatory Therapies -->
         <section>
+          <div class="slide-header">Section 13</div>
           <h2>Other Immunomodulatory Therapies</h2>
           <ul>
             <li>
@@ -658,6 +726,7 @@
 
         <!-- Slide 40: Plasma Exchange (Plasmapheresis) -->
         <section>
+          <div class="slide-header">Section 13</div>
           <h2>Plasma Exchange (Plasmapheresis)</h2>
           <ul>
             <li>Indicated for steroid-refractory acute ON</li>
@@ -668,6 +737,7 @@
 
         <!-- Slide 41: Symptomatic Management -->
         <section>
+          <div class="slide-header">Section 14</div>
           <h2>Symptomatic Management</h2>
           <ul>
             <li>Pain control: NSAIDs, acetaminophen</li>
@@ -678,6 +748,7 @@
 
         <!-- Slide 42: Natural Course of ON -->
         <section>
+          <div class="slide-header">Section 14</div>
           <h2>Natural Course of ON</h2>
           <ul>
             <li>
@@ -690,6 +761,7 @@
 
         <!-- Slide 43: Risk of Progression to MS -->
         <section>
+          <div class="slide-header">Section 14</div>
           <h2>Risk of Progression to MS</h2>
           <ul>
             <li>High lesion load on MRI = higher MS risk</li>
@@ -700,6 +772,7 @@
 
         <!-- Slide 44: Optic Neuritis Treatment Trial (ONTT) -->
         <section>
+          <div class="slide-header">Section 14</div>
           <h2>Optic Neuritis Treatment Trial (ONTT)</h2>
           <ul>
             <li>Landmark trial: steroids vs. placebo in acute ON</li>
@@ -713,6 +786,7 @@
 
         <!-- Slide 45: Pediatric Optic Neuritis -->
         <section>
+          <div class="slide-header">Section 15</div>
           <h2>Pediatric Optic Neuritis</h2>
           <ul>
             <li>Often bilateral in children</li>
@@ -723,6 +797,7 @@
 
         <!-- Slide 46: Pregnancy and ON/MS -->
         <section>
+          <div class="slide-header">Section 15</div>
           <h2>Pregnancy and ON/MS</h2>
           <ul>
             <li>
@@ -737,6 +812,7 @@
 
         <!-- Slide 47: Emerging Therapies -->
         <section>
+          <div class="slide-header">Section 15</div>
           <h2>Emerging Therapies</h2>
           <ul>
             <li>
@@ -753,6 +829,7 @@
 
         <!-- Slide 48: Patient Education & Support -->
         <section>
+          <div class="slide-header">Section 16</div>
           <h2>Patient Education &amp; Support</h2>
           <ul>
             <li>Explain ON &amp; MS link, possible disease course</li>
@@ -763,6 +840,7 @@
 
         <!-- Slide 49: Key Takeaways -->
         <section>
+          <div class="slide-header">Section 16</div>
           <h2>Key Takeaways</h2>
           <ul>
             <li>
@@ -779,6 +857,7 @@
 
         <!-- Slide 50: References -->
         <section class="references-slide">
+          <div class="slide-header">References</div>
           <h2>References</h2>
           <ul>
             <li>
@@ -786,18 +865,16 @@
               <a
                 href="https://www.webmd.com/multiple-sclerosis/optic-neuritis-ms-vision"
                 target="_blank"
+                >Optic Neuritis in MS</a
               >
-                Optic Neuritis in MS
-              </a>
             </li>
             <li>
               PubMed:
               <a
                 href="https://pubmed.ncbi.nlm.nih.gov/12789593/"
                 target="_blank"
+                >Optic Neuritis &amp; MS (PMID 12789593)</a
               >
-                Optic Neuritis &amp; MS (PMID 12789593)
-              </a>
             </li>
             <li>Optic Neuritis Treatment Trial (ONTT) Publications</li>
             <li>National Multiple Sclerosis Society</li>
@@ -812,17 +889,14 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script>
       Reveal.initialize({
-        hash: true, // Adds a URL hash so you can link to specific slides
-        slideNumber: true, // Show slide numbers
-        controls: true, // Show navigation controls
-        progress: true, // Show progress bar
-        center: true, // Vertically center slides
-        transition: "slide", // Slide transition
+        hash: true, // URL hash navigation
+        slideNumber: true, // Display slide numbers
+        controls: true, // Navigation arrows
+        progress: true, // Progress bar
+        center: true, // Center slides vertically
+        transition: "slide", // Slide transition style
         width: "100%",
         height: "100%",
-        // You can tweak these if text overflows:
-        // minScale: 0.75,
-        // maxScale: 1.25
       });
     </script>
   </body>
