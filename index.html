@@ -9,97 +9,114 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css"
     />
-
-    <!-- Reveal.js Theme (Moon) -->
+    <!-- Reveal.js Theme: WHITE (light background, dark text) -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/moon.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css"
       id="theme"
     />
 
-    <!-- Optional Reveal.js "League" Font for headings -->
-    <!-- You can also swap in your preferred fonts via Google Fonts -->
+    <!-- Optional Google Font: Open Sans -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
     />
 
     <style>
-      /* Custom styling for a consistent medical-themed look */
-
-      /* Use Open Sans for body text */
+      /* Base font styling */
       body,
       .reveal {
         font-family: "Open Sans", sans-serif;
         color: #333;
+        background-color: #fff;
       }
-
-      /* Slide headings */
-      .reveal h2 {
-        font-size: 1.4em;
-        margin-bottom: 0.4em;
-        color: #2c3e50; /* A dark slate-blue */
-        text-transform: none;
+      /* Subtle default heading style */
+      h2 {
+        color: #2c3e50;
+        margin-bottom: 0.5em;
+        font-weight: 600;
       }
-
-      /* Lists (bullets/numbering) */
-      .reveal ul,
-      .reveal ol {
-        font-size: 0.95em; /* Slightly smaller to reduce overflow */
+      /* Bullet lists */
+      ul,
+      ol {
+        font-size: 1em;
         line-height: 1.4em;
         margin-left: 1.2em;
+        color: #333;
       }
-
-      /* Title slide styling (optional) */
+      /* Keep slides from overflowing; allow vertical scrolling if needed */
+      .reveal .slides section {
+        overflow-y: auto;
+        max-height: 90vh;
+        padding-right: 1em;
+        position: relative; /* for the pseudo-element eye graphic */
+      }
+      /* Section name in a smaller subheader style */
+      .section-name {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 0.3em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      /* Eye icon placed via ::after pseudo-element on each slide */
+      section.ophthal-slide::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 60px;
+        height: 30px;
+        background: no-repeat center/contain
+          url("data:image/svg+xml;utf8,<svg%20width%3D%2250%22%20height%3D%2230%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%20fill%3D%22none%22%20stroke%3D%22%23ccc%22%20stroke-width%3D%222%22><path%20d%3D%22M2%2015%20Q%2025%202%2C%2048%2015%20Q%2025%2028%2C%202%2015Z%22%2F><circle%20cx%3D%2225%22%20cy%3D%2215%22%20r%3D%225%22%20fill%3D%22%23ccc%22%2F><%2Fsvg>");
+        opacity: 0.1; /* faint icon */
+        pointer-events: none; /* so it doesn’t interfere with clicks */
+      }
+      /* Title slide styling */
       section.title-slide {
         text-align: center;
-        background-color: #ecf0f1;
+        background-color: #f7f7f7;
         color: #2c3e50;
+        position: relative;
       }
-      section.title-slide h2 {
-        font-size: 1.8em;
-        margin: 0.5em 0;
-      }
-      section.title-slide h3 {
-        font-size: 1.2em;
-        margin: 0.2em 0;
-      }
-
-      /* References slide styling (optional) */
-      section.references-slide {
-        background-color: #fdfefe;
-      }
-
-      /* Ensure content fits or scrolls, preventing overflow cutoff */
-      .reveal .slides section {
-        overflow-y: auto; /* Scroll if content is too long */
-        max-height: 90vh; /* Keep some margin for navigation controls */
-        padding-right: 1em;
+      section.title-slide::after {
+        /* Add the eye icon to the title slide as well */
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 60px;
+        height: 30px;
+        background: no-repeat center/contain
+          url("data:image/svg+xml;utf8,<svg%20width%3D%2250%22%20height%3D%2230%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%20fill%3D%22none%22%20stroke%3D%22%23ccc%22%20stroke-width%3D%222%22><path%20d%3D%22M2%2015%20Q%2025%202%2C%2048%2015%20Q%2025%2028%2C%202%2015Z%22%2F><circle%20cx%3D%2225%22%20cy%3D%2215%22%20r%3D%225%22%20fill%3D%22%23ccc%22%2F><%2Fsvg>");
+        opacity: 0.1;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- Slide 1 (Title) -->
+        <!-- ====== TITLE SLIDE ====== -->
         <section class="title-slide">
           <h2>Optic Neuritis in Multiple Sclerosis</h2>
           <h3>
             A Comprehensive Review (History, Exam, Diagnosis &amp; Management)
           </h3>
-          <p>Presented by: [Your Name]</p>
+          <p>Presented by: Sanaa</p>
           <p>[Date or Institution]</p>
         </section>
 
-        <!-- Slide 2: Outline -->
-        <section>
+        <!-- ====== SLIDE 2: Outline ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Overview</p>
           <h2>Outline</h2>
           <ol>
             <li>Introduction</li>
             <li>Epidemiology &amp; Risk Factors</li>
             <li>Pathophysiology</li>
             <li>Types of Optic Neuritis</li>
-            <li>Relationship Between ON and MS</li>
+            <li>Relationship Between ON &amp; MS</li>
             <li>Clinical Features</li>
             <li>History Taking</li>
             <li>Clinical Examination</li>
@@ -113,312 +130,307 @@
           </ol>
         </section>
 
-        <!-- Slide 3: Definition of ON -->
-        <section>
+        <!-- ====== SLIDE 3: Introduction ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 1: Introduction</p>
           <h2>Definition of Optic Neuritis</h2>
           <ul>
             <li>
               <strong>Optic Neuritis (ON):</strong> Inflammatory demyelination
-              of the optic nerve.
+              of the optic nerve
             </li>
             <li>
-              <strong>Common Presentation:</strong> Subacute onset of unilateral
-              vision loss and eye pain.
+              <strong>Presentation:</strong> Subacute onset of unilateral vision
+              loss, eye pain
             </li>
             <li>
-              <strong>Significance:</strong> Frequently the initial
-              manifestation of MS.
+              <strong>Significance:</strong> Often the first manifestation of MS
             </li>
           </ul>
         </section>
 
-        <!-- Slide 4: Importance of Studying ON in MS -->
-        <section>
+        <!-- ====== SLIDE 4: Introduction ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 1: Introduction</p>
           <h2>Importance of Studying ON in MS</h2>
           <ul>
             <li>
-              ON is often the <strong>first demyelinating event</strong> in MS.
+              ON is often the <strong>first demyelinating event</strong> in MS
             </li>
-            <li>~15–20% of MS patients initially present with ON.</li>
+            <li>~15–20% of MS patients initially present with ON</li>
             <li>
-              Provides insight into <strong>autoimmune demyelination</strong> in
-              the CNS.
+              Insight into <strong>autoimmune demyelination</strong> in the CNS
             </li>
-            <li>Early detection can prompt disease-modifying therapies.</li>
+            <li>Early detection can prompt disease-modifying therapies</li>
           </ul>
         </section>
 
-        <!-- Slide 5: Epidemiology -->
-        <section>
+        <!-- ====== SLIDE 5: Epidemiology ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 2: Epidemiology &amp; Risk Factors</p>
           <h2>Epidemiology</h2>
           <ul>
-            <li><strong>Age:</strong> Common in young adults (20–40 years).</li>
-            <li><strong>Gender:</strong> Female predominance (~3:1).</li>
+            <li><strong>Age:</strong> Typically 20–40 years</li>
+            <li><strong>Gender:</strong> Female predominance (~3:1)</li>
             <li>
-              <strong>Geographic Variation:</strong> Higher incidence further
-              from the equator.
+              <strong>Geographic Variation:</strong> Higher incidence farther
+              from the equator
             </li>
             <li>
-              <strong>Association:</strong> ~50% of isolated ON develop MS
-              within 15 years.
+              <strong>Association:</strong> 50% of isolated ON develop MS within
+              15 years
             </li>
           </ul>
         </section>
 
-        <!-- Slide 6: Risk Factors -->
-        <section>
+        <!-- ====== SLIDE 6: Risk Factors ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 2: Epidemiology &amp; Risk Factors</p>
           <h2>Risk Factors</h2>
           <ul>
             <li>
-              <strong>Genetic Predisposition:</strong> Certain HLA genotypes.
+              <strong>Genetic Predisposition:</strong> Certain HLA genotypes
             </li>
             <li>
-              <strong>Environmental Factors:</strong>
-              <ul>
-                <li>Low Vitamin D</li>
-                <li>Smoking</li>
-                <li>Viral triggers (EBV association)</li>
-              </ul>
+              <strong>Environmental:</strong> Low Vitamin D, smoking, possible
+              viral triggers (EBV)
             </li>
-            <li>
-              <strong>Autoimmune Disorders:</strong> May predispose to ON.
-            </li>
+            <li><strong>Autoimmune Disorders:</strong> May predispose to ON</li>
           </ul>
         </section>
 
-        <!-- Slide 7: Basic Immunopathology -->
-        <section>
+        <!-- ====== SLIDE 7: Pathophysiology ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 3: Pathophysiology</p>
           <h2>Basic Immunopathology</h2>
           <ul>
             <li>
               <strong>Autoimmune Attack:</strong> T-cells, B-cells, and
-              antibodies target myelin.
+              antibodies target myelin
             </li>
             <li>
-              <strong>Key Immune Cells:</strong> T lymphocytes (CD4+, CD8+), B
-              cells, macrophages.
+              <strong>Key Cells:</strong> CD4+, CD8+ T cells, B cells,
+              macrophages
             </li>
             <li>
               <strong>Inflammatory Cascade:</strong> Cytokines (IL-2, IFN-γ)
-              perpetuate demyelination and axonal injury.
+              promote demyelination, axonal injury
             </li>
           </ul>
         </section>
 
-        <!-- Slide 8: Demyelination in the Optic Nerve -->
-        <section>
+        <!-- ====== SLIDE 8 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 3: Pathophysiology</p>
           <h2>Demyelination in the Optic Nerve</h2>
           <ul>
+            <li><strong>Myelin Loss:</strong> Slows nerve conduction</li>
             <li>
-              <strong>Myelin Sheath Destruction:</strong> Slows nerve
-              conduction.
-            </li>
-            <li>
-              <strong>Axonal Injury:</strong> Potential for permanent damage.
+              <strong>Axonal Injury:</strong> Potentially permanent if severe
             </li>
             <li>
               <strong>Remyelination:</strong> Explains partial or full visual
-              recovery.
+              recovery
             </li>
           </ul>
         </section>
 
-        <!-- Slide 9: Role of MS Plaques -->
-        <section>
+        <!-- ====== SLIDE 9 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 3: Pathophysiology</p>
           <h2>Role of MS Plaques</h2>
           <ul>
+            <li><strong>MS Plaques:</strong> Focal CNS demyelination</li>
             <li>
-              <strong>MS Plaques:</strong> Focal areas of CNS demyelination.
+              <strong>Locations:</strong> Periventricular, juxtacortical,
+              infratentorial, spinal cord
             </li>
             <li>
-              <strong>Common Locations:</strong> Periventricular, juxtacortical,
-              infratentorial, spinal cord.
-            </li>
-            <li>
-              <strong>MRI Correlation:</strong> T2/FLAIR hyperintensities;
-              active lesions enhance with gadolinium.
+              <strong>MRI:</strong> T2/FLAIR lesions; active lesions enhance
+              with gadolinium
             </li>
             <li>
               <strong>Optic Nerve Lesions:</strong> Enhancement indicates acute
-              ON inflammation.
+              inflammation
             </li>
           </ul>
         </section>
 
-        <!-- Slide 10: Typical vs. Atypical ON -->
-        <section>
+        <!-- ====== SLIDE 10 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 4: Types of Optic Neuritis</p>
           <h2>Typical vs. Atypical ON</h2>
           <ul>
             <li>
-              <strong>Typical ON (Demyelinating):</strong>
+              <strong>Typical (Demyelinating) ON:</strong>
               <ul>
-                <li>Often associated with MS</li>
-                <li>Usually unilateral, painful, better recovery</li>
-                <li>MRI often shows MS-like lesions</li>
+                <li>Associated with MS</li>
+                <li>Usually unilateral, painful, good recovery</li>
+                <li>MRI often shows MS-type lesions</li>
               </ul>
             </li>
             <li>
               <strong>Atypical ON:</strong>
               <ul>
-                <li>Causes: NMO, MOG disease, infections, sarcoidosis</li>
-                <li>Often bilateral or severe, may have worse prognosis</li>
+                <li>Causes: NMO, MOG, infections, sarcoidosis</li>
+                <li>Often bilateral or severe; may have worse prognosis</li>
               </ul>
             </li>
           </ul>
         </section>
 
-        <!-- Slide 11: Clinical Clues to Atypical ON -->
-        <section>
+        <!-- ====== SLIDE 11 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 4: Types of Optic Neuritis</p>
           <h2>Clinical Clues to Atypical ON</h2>
           <ul>
-            <li>Poor response to steroids</li>
+            <li>Poor steroid response</li>
             <li>Recurrent bilateral involvement</li>
             <li>Severe vision loss at onset</li>
-            <li>Systemic symptoms (e.g., rash, arthralgias)</li>
+            <li>Systemic symptoms (rash, arthralgias)</li>
             <li>Marked disc swelling on imaging</li>
           </ul>
         </section>
 
-        <!-- Slide 12: ON as an Early Indicator of MS -->
-        <section>
+        <!-- ====== SLIDE 12 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">
+            Section 5: Relationship Between ON &amp; MS
+          </p>
           <h2>ON as an Early Indicator of MS</h2>
           <ul>
-            <li>First symptom in 15–20% of MS patients</li>
-            <li>~50% develop MS within 15 years after a first ON episode</li>
-            <li>MRI brain lesions = higher risk of conversion to MS</li>
+            <li>15–20% of MS patients present with ON initially</li>
+            <li>~50% develop MS within 15 years after first ON</li>
+            <li>MRI brain lesions greatly increase MS conversion risk</li>
           </ul>
         </section>
 
-        <!-- Slide 13: MS Diagnostic Criteria (Brief) -->
-        <section>
+        <!-- ====== SLIDE 13 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">
+            Section 5: Relationship Between ON &amp; MS
+          </p>
           <h2>MS Diagnostic Criteria (Brief)</h2>
           <ul>
             <li>
               <strong>McDonald Criteria:</strong> Dissemination in time &amp;
-              space.
+              space
             </li>
             <li>
               <strong>Clinical Attacks + MRI Evidence:</strong>
               <ul>
-                <li>Dissemination in Space: ≥2 CNS regions</li>
-                <li>Dissemination in Time: Lesions at different times</li>
+                <li>≥2 CNS regions (space)</li>
+                <li>Lesions at different times (time)</li>
               </ul>
             </li>
-            <li>Optic Neuritis can fulfill part of the clinical criteria.</li>
+            <li>ON can fulfill part of the clinical requirement</li>
           </ul>
         </section>
 
-        <!-- Slide 14: Vision Loss -->
-        <section>
+        <!-- ====== SLIDE 14 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Vision Loss</h2>
           <ul>
-            <li>
-              <strong>Nature:</strong> Sudden or subacute onset over days to ~1
-              week
-            </li>
-            <li>
-              <strong>Severity:</strong> Mild blurring to complete vision loss
-            </li>
+            <li><strong>Nature:</strong> Sudden/subacute (~days to 1 week)</li>
+            <li><strong>Severity:</strong> Mild blurring to complete loss</li>
             <li>
               <strong>Laterality:</strong> Typically unilateral in demyelinating
               ON
             </li>
             <li>
-              <strong>Progression:</strong> Often worsens for ~1 week, then
+              <strong>Progression:</strong> Worsens ~1 week, then
               stabilizes/improves
             </li>
           </ul>
         </section>
 
-        <!-- Slide 15: Pain with Eye Movement -->
-        <section>
+        <!-- ====== SLIDE 15 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Pain with Eye Movement</h2>
           <ul>
-            <li>
-              ~90% of patients report orbital pain, worsened by eye movement
-            </li>
-            <li>Due to inflammation of the optic nerve sheath</li>
+            <li>~90% report retro-orbital pain</li>
+            <li>Pain worsens with movement</li>
+            <li>Linked to inflammation of optic nerve sheath</li>
           </ul>
         </section>
 
-        <!-- Slide 16: Color Vision Defects -->
-        <section>
+        <!-- ====== SLIDE 16 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Color Vision Defects</h2>
           <ul>
-            <li>Red desaturation is a hallmark of ON</li>
-            <li>Ishihara plates may show color discrimination deficits</li>
-            <li>
-              Residual color vision changes can persist even after acuity
-              improves
-            </li>
+            <li>Red desaturation is classic</li>
+            <li>Ishihara plates often detect color discrimination issues</li>
+            <li>Residual color deficits may persist after acuity recovers</li>
           </ul>
         </section>
 
-        <!-- Slide 17: Visual Field Defects -->
-        <section>
+        <!-- ====== SLIDE 17 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Visual Field Defects</h2>
           <ul>
-            <li>Most common: Central or cecocentral scotoma</li>
-            <li>Diffuse field loss or altitudinal defect is less frequent</li>
-            <li>Confrontation test (screen), automated perimetry (detailed)</li>
+            <li>Central or cecocentral scotoma common</li>
+            <li>Diffuse or altitudinal deficits are less frequent</li>
+            <li>Confrontation (screen), automated perimetry (detailed)</li>
           </ul>
         </section>
 
-        <!-- Slide 18: Uhthoff’s Phenomenon -->
-        <section>
+        <!-- ====== SLIDE 18 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Uhthoff’s Phenomenon</h2>
           <ul>
-            <li>Worsening of neurological symptoms with heat/exercise</li>
+            <li>Temporary worsening of symptoms with heat/exercise</li>
             <li>
-              Elevated body temperature further impairs conduction in
-              demyelinated axons
+              Raised temperature impairs conduction in demyelinated fibers
             </li>
             <li>Can transiently reduce visual acuity</li>
           </ul>
         </section>
 
-        <!-- Slide 19: Relative Afferent Pupillary Defect (RAPD) -->
-        <section>
+        <!-- ====== SLIDE 19 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 6: Clinical Features</p>
           <h2>Relative Afferent Pupillary Defect (RAPD)</h2>
           <ul>
-            <li>
-              Use the swinging flashlight test to detect unilateral/asymmetric
-              dysfunction
-            </li>
-            <li>
-              More pronounced RAPD generally indicates more severe ON
-              involvement
-            </li>
+            <li>Detected by swinging flashlight test</li>
+            <li>Indicates unilateral/asymmetric optic nerve dysfunction</li>
+            <li>More pronounced RAPD = more severe ON</li>
           </ul>
         </section>
 
-        <!-- Slide 20: History Taking (Part 1) -->
-        <section>
-          <h2>Key Points in History (Part 1)</h2>
+        <!-- ====== SLIDE 20 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 7: History Taking</p>
+          <h2>Key Points (Part 1)</h2>
           <ul>
-            <li>Chief complaint: Exact nature &amp; onset of vision loss</li>
-            <li>Pain: Especially with eye movement</li>
-            <li>Timeline: Duration, progression</li>
-            <li>Possible triggers: Recent infection, vaccination, or stress</li>
+            <li>Chief complaint: onset &amp; nature of vision loss</li>
+            <li>Pain: especially with eye movement</li>
+            <li>Timeline: duration, progression</li>
+            <li>Possible triggers: infection, vaccination, stress</li>
           </ul>
         </section>
 
-        <!-- Slide 21: History Taking (Part 2) -->
-        <section>
-          <h2>Key Points in History (Part 2)</h2>
+        <!-- ====== SLIDE 21 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 7: History Taking</p>
+          <h2>Key Points (Part 2)</h2>
           <ul>
             <li>
               <strong>Systemic Review:</strong>
               <ul>
-                <li>Neurological symptoms: numbness, weakness, ataxia</li>
-                <li>Urinary issues, diplopia</li>
+                <li>Neurological: numbness, weakness, ataxia</li>
+                <li>Urinary changes, diplopia</li>
               </ul>
             </li>
             <li>
               <strong>Past Medical History:</strong>
               <ul>
-                <li>Previous ON episodes</li>
-                <li>Known autoimmune/neuro disorders</li>
+                <li>Prior ON episodes</li>
+                <li>Autoimmune/neuro disorders</li>
               </ul>
             </li>
             <li>
@@ -427,105 +439,112 @@
           </ul>
         </section>
 
-        <!-- Slide 22: Additional History Details -->
-        <section>
+        <!-- ====== SLIDE 22 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 7: History Taking</p>
           <h2>Additional History Details</h2>
           <ul>
-            <li>Medication Use: steroids, immunomodulators, etc.</li>
-            <li>Social History: smoking, alcohol, occupation</li>
-            <li>Travel History: risk for infections</li>
-            <li>
-              Red Flags: Systemic signs like fever, weight loss, or night sweats
-            </li>
+            <li>Medication use: steroids, immunomodulators</li>
+            <li>Social history: smoking, alcohol, occupation</li>
+            <li>Travel history: potential infections</li>
+            <li>Red flags: fever, weight loss, etc.</li>
           </ul>
         </section>
 
-        <!-- Slide 23: Visual Acuity Testing -->
-        <section>
+        <!-- ====== SLIDE 23 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Visual Acuity Testing</h2>
           <ul>
-            <li>Measure best-corrected VA (Snellen, ETDRS)</li>
-            <li>Compare findings with the contralateral eye</li>
-            <li>Check for pinhole improvement</li>
+            <li>Check best-corrected VA (Snellen, ETDRS)</li>
+            <li>Compare with contralateral eye</li>
+            <li>Note any pinhole improvement</li>
           </ul>
         </section>
 
-        <!-- Slide 24: Pupillary Examination -->
-        <section>
+        <!-- ====== SLIDE 24 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Pupillary Examination</h2>
           <ul>
-            <li>Size, shape, symmetry of pupils</li>
+            <li>Size, shape, symmetry</li>
             <li>Direct &amp; consensual light reflex</li>
-            <li>Swinging flashlight test for RAPD</li>
-            <li>Near reflex (accommodation, convergence)</li>
+            <li>Swinging flashlight test (RAPD)</li>
+            <li>Near response (accommodation, convergence)</li>
           </ul>
         </section>
 
-        <!-- Slide 25: Color Vision Testing -->
-        <section>
+        <!-- ====== SLIDE 25 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Color Vision Testing</h2>
           <ul>
-            <li>Ishihara plates to screen for color defects</li>
-            <li>Red desaturation test for subtle differences</li>
-            <li>Document severity/persistence of color deficits</li>
+            <li>Ishihara plates for color discrimination</li>
+            <li>Red desaturation test for subtle deficits</li>
+            <li>Document severity &amp; changes over time</li>
           </ul>
         </section>
 
-        <!-- Slide 26: Visual Field Evaluation -->
-        <section>
+        <!-- ====== SLIDE 26 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Visual Field Evaluation</h2>
           <ul>
-            <li>Confrontation testing (screening)</li>
-            <li>Automated perimetry (e.g., Humphrey) for detailed mapping</li>
+            <li>Confrontation testing (screen)</li>
+            <li>Automated perimetry (Humphrey) for detail</li>
             <li>Identify scotomas or generalized field loss</li>
           </ul>
         </section>
 
-        <!-- Slide 27: Fundoscopic Examination -->
-        <section>
+        <!-- ====== SLIDE 27 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Fundoscopic Examination</h2>
           <ul>
-            <li>Acute ON often normal disc (retrobulbar neuritis)</li>
+            <li>Retrobulbar neuritis: normal disc in acute ON</li>
             <li>Possible disc swelling (papillitis)</li>
-            <li>Chronic: optic disc pallor indicates atrophy</li>
+            <li>Chronic disc pallor = optic atrophy</li>
           </ul>
         </section>
 
-        <!-- Slide 28: Neurological Examination -->
-        <section>
+        <!-- ====== SLIDE 28 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 8: Clinical Examination</p>
           <h2>Neurological Examination</h2>
           <ul>
-            <li>Cranial Nerves: check EOMs (III, IV, VI), CN V, etc.</li>
+            <li>Cranial nerves: EOM (III, IV, VI), trigeminal (V), etc.</li>
             <li>Motor: weakness, spasticity</li>
             <li>Sensory: pinprick, proprioception</li>
-            <li>Coordination: ataxia tests; Gait: spastic or unsteady gait</li>
+            <li>Coordination/gait: check for ataxia, spastic gait</li>
           </ul>
         </section>
 
-        <!-- Slide 29: MRI of the Brain & Orbits (Part 1) -->
-        <section>
+        <!-- ====== SLIDE 29 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 9: Investigations</p>
           <h2>MRI of the Brain &amp; Orbits (1)</h2>
           <ul>
             <li>
-              <strong>Purpose:</strong> Identify demyelinating lesions in CNS
+              <strong>Purpose:</strong> Identify CNS demyelinating lesions
             </li>
             <li>
-              <strong>Optic Nerve Enhancement:</strong> T1 with gadolinium
-              indicates active inflammation
+              <strong>Optic Nerve Enhancement:</strong> T1 + gadolinium → active
+              inflammation
             </li>
             <li>
-              <strong>T2/FLAIR Hyperintensities:</strong> Show older or new
+              <strong>T2/FLAIR:</strong> Hyperintensities showing older/new
               plaques
             </li>
           </ul>
         </section>
 
-        <!-- Slide 30: MRI of the Brain & Orbits (Part 2) -->
-        <section>
+        <!-- ====== SLIDE 30 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 9: Investigations</p>
           <h2>MRI of the Brain &amp; Orbits (2)</h2>
           <ul>
             <li>
-              <strong>High-Risk for MS:</strong> Multiple lesions, especially
+              <strong>High MS Risk:</strong> Multiple lesions, especially
               periventricular
             </li>
             <li>
@@ -535,63 +554,63 @@
           </ul>
         </section>
 
-        <!-- Slide 31: Visual Evoked Potentials (VEP) -->
-        <section>
+        <!-- ====== SLIDE 31 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 9: Investigations</p>
           <h2>Visual Evoked Potentials (VEP)</h2>
           <ul>
-            <li>Measures conduction speed from retina to occipital cortex</li>
-            <li>Prolonged P100 latency indicates demyelination</li>
-            <li>Useful for subclinical lesions, supports MS diagnosis</li>
+            <li>Measures conduction latency from retina to occipital cortex</li>
+            <li>Prolonged P100 = demyelination</li>
+            <li>Helps detect subclinical lesions, supports MS diagnosis</li>
           </ul>
         </section>
 
-        <!-- Slide 32: Optical Coherence Tomography (OCT) -->
-        <section>
+        <!-- ====== SLIDE 32 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 9: Investigations</p>
           <h2>Optical Coherence Tomography (OCT)</h2>
           <ul>
-            <li>
-              Cross-sectional imaging of the retinal nerve fiber layer (RNFL)
-            </li>
-            <li>Thinning of RNFL indicates axonal loss after ON</li>
-            <li>Helps monitor disease progression or treatment response</li>
+            <li>Cross-sectional imaging of retinal nerve fiber layer (RNFL)</li>
+            <li>Thinning indicates axonal loss post-ON</li>
+            <li>Monitors disease progression or treatment response</li>
           </ul>
         </section>
 
-        <!-- Slide 33: Additional Laboratory Tests -->
-        <section>
+        <!-- ====== SLIDE 33 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 9: Investigations</p>
           <h2>Additional Laboratory Tests</h2>
           <ul>
-            <li><strong>Serologic Tests:</strong> NMO-IgG (AQP4), MOG-IgG</li>
+            <li><strong>Serologic:</strong> NMO-IgG (AQP4), MOG-IgG</li>
             <li>
-              <strong>Basic Labs:</strong> CBC, ESR, CRP, ANA (rule out systemic
+              <strong>Basic Labs:</strong> CBC, ESR, CRP, ANA (exclude other
               causes)
             </li>
-            <li>
-              <strong>CSF Analysis:</strong> Oligoclonal bands supportive of MS
-            </li>
+            <li><strong>CSF:</strong> Oligoclonal bands supportive of MS</li>
           </ul>
         </section>
 
-        <!-- Slide 34: Major Differentials -->
-        <section>
+        <!-- ====== SLIDE 34 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 10: Differential Diagnosis</p>
           <h2>Major Differentials</h2>
           <ul>
             <li>Neuromyelitis Optica (NMO)</li>
             <li>MOG Antibody Disease</li>
             <li>Ischemic Optic Neuropathy</li>
             <li>Leber’s Hereditary Optic Neuropathy</li>
-            <li>Infectious Optic Neuritis (e.g., syphilis, Lyme)</li>
-            <li>Sarcoid/Autoimmune ON</li>
+            <li>Infectious ON (e.g., syphilis, Lyme)</li>
+            <li>Sarcoid/Autoimmune Optic Neuritis</li>
           </ul>
         </section>
 
-        <!-- Slide 35: Clues to Differentials -->
-        <section>
-          <h2>Clues to Differentials</h2>
+        <!-- ====== SLIDE 35 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 10: Differential Diagnosis</p>
+          <h2>Clues to Different Etiologies</h2>
           <ul>
             <li>
               <strong>NMO:</strong> Severe, bilateral, spinal cord lesions
-              (longitudinally extensive)
             </li>
             <li><strong>MOG-ON:</strong> Disc swelling, often good recovery</li>
             <li>
@@ -608,187 +627,186 @@
           </ul>
         </section>
 
-        <!-- Slide 36: General Approach to Management -->
-        <section>
-          <h2>General Approach to Management</h2>
+        <!-- ====== SLIDE 36 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
+          <h2>General Approach</h2>
           <ul>
-            <li>Confirm diagnosis: Clinical + MRI (+/- VEP)</li>
-            <li>Assess MS risk: Brain MRI for demyelinating lesions</li>
-            <li>Exclude atypical causes: NMO-IgG, MOG-IgG if suspicion</li>
+            <li>Confirm diagnosis: clinical + MRI ± VEP</li>
+            <li>Assess MS risk: Brain MRI for lesions</li>
+            <li>Exclude atypical (NMO, MOG) if suspicion</li>
           </ul>
         </section>
 
-        <!-- Slide 37: High-Dose Corticosteroids -->
-        <section>
+        <!-- ====== SLIDE 37 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
           <h2>High-Dose Corticosteroids</h2>
           <ul>
-            <li>
-              First-line for acute ON: IV methylprednisolone 1 g/day x 3–5 days
-            </li>
-            <li>Oral steroids may follow IV or be used if mild</li>
-            <li>Speeds recovery but doesn’t always alter long-term final VA</li>
+            <li>First-line: IV methylprednisolone 1 g/day x 3–5 days</li>
+            <li>Oral steroids may follow or be used if mild</li>
+            <li>Speeds recovery but may not alter final VA outcome</li>
           </ul>
         </section>
 
-        <!-- Slide 38: Disease-Modifying Therapies (DMTs) -->
-        <section>
+        <!-- ====== SLIDE 38 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
           <h2>Disease-Modifying Therapies (DMTs)</h2>
           <ul>
-            <li>Indicated if MS or high MS risk is confirmed</li>
+            <li>Indicated if MS or high risk of MS</li>
             <li>
               Examples:
               <ul>
-                <li>Interferon β-1a/b</li>
-                <li>Glatiramer acetate</li>
-                <li>Dimethyl fumarate</li>
+                <li>Interferon β, Glatiramer, Dimethyl fumarate</li>
                 <li>Natalizumab, Ocrelizumab, etc.</li>
               </ul>
             </li>
-            <li>Reduce relapse frequency &amp; slow progression</li>
+            <li>Reduce relapse rate &amp; slow progression</li>
           </ul>
         </section>
 
-        <!-- Slide 39: Other Immunomodulatory Therapies -->
-        <section>
+        <!-- ====== SLIDE 39 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
           <h2>Other Immunomodulatory Therapies</h2>
           <ul>
             <li>
-              <strong>NMO:</strong> Steroids + possible plasmapheresis;
-              long-term rituximab or similar
+              <strong>NMO:</strong> Steroids, plasmapheresis, rituximab for
+              maintenance
             </li>
             <li>
-              <strong>MOG-ON:</strong> Steroids, IVIG, or other
-              immunosuppressants depending on severity
+              <strong>MOG-ON:</strong> Steroids ± IVIG or immunosuppressants
             </li>
-            <li>Goal: Address underlying autoimmune process</li>
+            <li>Target underlying autoimmune mechanisms</li>
           </ul>
         </section>
 
-        <!-- Slide 40: Plasma Exchange (Plasmapheresis) -->
-        <section>
+        <!-- ====== SLIDE 40 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
           <h2>Plasma Exchange (Plasmapheresis)</h2>
           <ul>
-            <li>Indicated for steroid-refractory acute ON</li>
-            <li>Removes circulating autoantibodies and immune complexes</li>
-            <li>May improve vision in refractory demyelinating ON</li>
+            <li>Used for steroid-refractory acute ON</li>
+            <li>Removes autoantibodies/immune complexes</li>
+            <li>May improve vision in otherwise refractory ON</li>
           </ul>
         </section>
 
-        <!-- Slide 41: Symptomatic Management -->
-        <section>
+        <!-- ====== SLIDE 41 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 11: Management</p>
           <h2>Symptomatic Management</h2>
           <ul>
             <li>Pain control: NSAIDs, acetaminophen</li>
             <li>Vision aids: large print, contrast enhancements</li>
-            <li>Cooling strategies: to mitigate Uhthoff’s phenomenon</li>
+            <li>Cooling strategies to reduce Uhthoff’s phenomenon</li>
           </ul>
         </section>
 
-        <!-- Slide 42: Natural Course of ON -->
-        <section>
+        <!-- ====== SLIDE 42 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 12: Prognosis &amp; Follow-Up</p>
           <h2>Natural Course of ON</h2>
           <ul>
-            <li>
-              Partial recovery often starts in 2–4 weeks, continues for months
-            </li>
-            <li>Generally good final visual outcome in typical ON</li>
-            <li>Mild residual color or contrast deficits can persist</li>
+            <li>Partial recovery often starts 2–4 weeks post-onset</li>
+            <li>Many have good final VA in typical ON</li>
+            <li>Color/contrast deficits may persist</li>
           </ul>
         </section>
 
-        <!-- Slide 43: Risk of Progression to MS -->
-        <section>
+        <!-- ====== SLIDE 43 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 12: Prognosis &amp; Follow-Up</p>
           <h2>Risk of Progression to MS</h2>
           <ul>
-            <li>High lesion load on MRI = higher MS risk</li>
-            <li>Monitor with repeat exams &amp; MRIs if new symptoms arise</li>
-            <li>Early DMT may delay or reduce MS progression</li>
+            <li>High lesion load on MRI → greater risk</li>
+            <li>
+              Close monitoring with repeat neuro exams &amp; MRI if new symptoms
+            </li>
+            <li>Early DMT can delay or reduce MS progression</li>
           </ul>
         </section>
 
-        <!-- Slide 44: Optic Neuritis Treatment Trial (ONTT) -->
-        <section>
+        <!-- ====== SLIDE 44 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 12: Prognosis &amp; Follow-Up</p>
           <h2>Optic Neuritis Treatment Trial (ONTT)</h2>
           <ul>
             <li>Landmark trial: steroids vs. placebo in acute ON</li>
             <li>
               IV steroids hastened recovery but no major long-term VA difference
             </li>
-            <li>Oral steroids alone had higher short-term recurrence rate</li>
+            <li>Oral steroids alone had higher short-term recurrence</li>
             <li>MRI lesions predicted higher MS risk</li>
           </ul>
         </section>
 
-        <!-- Slide 45: Pediatric Optic Neuritis -->
-        <section>
+        <!-- ====== SLIDE 45 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 13: Special Considerations</p>
           <h2>Pediatric Optic Neuritis</h2>
           <ul>
             <li>Often bilateral in children</li>
             <li>May follow viral infection or vaccination</li>
-            <li>
-              Treat with high-dose steroids; evaluate for demyelinating disease
-            </li>
+            <li>High-dose steroids; evaluate for demyelinating disease</li>
           </ul>
         </section>
 
-        <!-- Slide 46: Pregnancy and ON/MS -->
-        <section>
-          <h2>Pregnancy and ON/MS</h2>
+        <!-- ====== SLIDE 46 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 13: Special Considerations</p>
+          <h2>Pregnancy &amp; ON/MS</h2>
           <ul>
             <li>
-              MS relapses may decrease during pregnancy but rebound postpartum
+              MS relapses may decrease during pregnancy, rebound postpartum
             </li>
-            <li>
-              Some DMTs contraindicated in pregnancy; adjust therapy accordingly
-            </li>
+            <li>Some DMTs contraindicated; therapy must be adjusted</li>
             <li>Short-term IV steroids are generally safe if needed</li>
           </ul>
         </section>
 
-        <!-- Slide 47: Emerging Therapies -->
-        <section>
+        <!-- ====== SLIDE 47 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 13: Future Directions</p>
           <h2>Emerging Therapies</h2>
           <ul>
+            <li>Neuroprotective agents to preserve axons</li>
+            <li>Remyelinating therapies to enhance repair</li>
             <li>
-              Neuroprotective agents: Aiming to protect axons in acute
-              inflammation
-            </li>
-            <li>Remyelinating therapies: Enhance repair of myelin sheath</li>
-            <li>
-              Biologics: New monoclonal antibodies targeting specific immune
+              Biologics: advanced monoclonal antibodies targeting key immune
               pathways
             </li>
           </ul>
         </section>
 
-        <!-- Slide 48: Patient Education & Support -->
-        <section>
+        <!-- ====== SLIDE 48 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 13: Special Considerations</p>
           <h2>Patient Education &amp; Support</h2>
           <ul>
-            <li>Explain ON &amp; MS link, possible disease course</li>
-            <li>Lifestyle: Avoid smoking, ensure Vitamin D, manage stress</li>
-            <li>Resources: MS societies, vision rehab programs, counseling</li>
+            <li>Explain ON–MS link &amp; typical disease course</li>
+            <li>Lifestyle: avoid smoking, optimize Vitamin D, manage stress</li>
+            <li>Resources: MS societies, vision rehab, counseling</li>
           </ul>
         </section>
 
-        <!-- Slide 49: Key Takeaways -->
-        <section>
+        <!-- ====== SLIDE 49 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 14: Conclusion</p>
           <h2>Key Takeaways</h2>
           <ul>
-            <li>
-              ON: acute unilateral vision loss, eye pain, color desaturation
-            </li>
-            <li>Often first sign of MS; ~50% risk of MS over 15 years</li>
-            <li>Diagnosis: history, exam (RAPD, color vision, VF), MRI, VEP</li>
-            <li>
-              Management: High-dose IV steroids, DMT if MS risk; generally good
-              recovery
-            </li>
+            <li>ON: unilateral vision loss, eye pain, color desaturation</li>
+            <li>Often the first sign of MS (50% risk over ~15 years)</li>
+            <li>Diagnose via clinical exam, MRI, VEP</li>
+            <li>Treat with high-dose IV steroids, consider DMT for MS risk</li>
+            <li>Generally favorable visual recovery in typical ON</li>
           </ul>
         </section>
 
-        <!-- Slide 50: References -->
-        <section class="references-slide">
+        <!-- ====== SLIDE 50 ====== -->
+        <section class="ophthal-slide">
+          <p class="section-name">Section 15: References</p>
           <h2>References</h2>
           <ul>
             <li>
@@ -822,17 +840,14 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script>
       Reveal.initialize({
-        hash: true, // Adds a URL hash so you can link to specific slides
+        hash: true, // Add a URL hash to link directly to slides
         slideNumber: true, // Show slide numbers
         controls: true, // Show navigation controls
         progress: true, // Show progress bar
-        center: true, // Vertically center slides
+        center: true, // Center slides vertically
         transition: "slide", // Slide transition
         width: "100%",
         height: "100%",
-        // You can tweak these if text overflows:
-        // minScale: 0.75,
-        // maxScale: 1.25
       });
     </script>
   </body>
